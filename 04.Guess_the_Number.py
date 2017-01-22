@@ -16,14 +16,18 @@ while guesses_taken < 6:
     guess = input()
     guess = int(guess)
 
+    guesses_taken += 1
+
     if secret_number > guess:
         print("Your guess is too low")
     elif secret_number < guess:
         print("Your guess is too hight")
     else:
-        print("You are right!!!")
+        break
 
-    guesses_taken += 1
-
+if guess == secret_number:
+    print("You are right!")
+else:
+    print("You are wrong. The number was {0}".format(secret_number))
 
 
